@@ -7,6 +7,13 @@
   pointer-events: none;
 }
 
+.heading {
+  font-family: 'Merriweather';
+  size: 24px;
+  font-weight: 700;
+  color:#11142D
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
