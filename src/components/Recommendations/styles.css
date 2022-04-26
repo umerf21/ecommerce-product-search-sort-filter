@@ -1,0 +1,28 @@
+.r-container{
+    margin: 75px ;
+    text-align: left;
+}
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.item{
+    align-items:'center';
+    width:23%;
+    min-width:'180px'
+}
+.item-image{
+    width:90%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.r-text {
+    display: '-webkit-box';
+    overflow: 'hidden';
+    -webkit-box-orient: 'vertical';
+    -webkit-line-clamp: 2;
+}

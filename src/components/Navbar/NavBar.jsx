@@ -1,20 +1,15 @@
 import React from "react";
 import { AppBar, Badge, Box, Button, IconButton, Stack, styled, Toolbar, Typography, useMediaQuery } from "@mui/material";
 import {HiOutlineMenu, HiOutlinePhone, HiOutlineShoppingCart} from 'react-icons/hi'
-import {FaFacebook,FaTwitter,FaInstagram,FaYoutube, FaRegUser} from 'react-icons/fa'
+import {FaRegUser} from 'react-icons/fa'
 import {FiHeart} from 'react-icons/fi'
 import Logo from '../../assets/images/logo.png'
 import { theme } from "../../theme";
 import { IconContext } from "react-icons";
+import { SocialMedia } from "../../data/AppData";
 
 const NavBar = () => {
 
-    const icons = [
-        {icon:FaFacebook, link:'https://www.facebook.com'},
-        {icon:FaTwitter, link:'https://www.twitter.com'},
-        {icon:FaInstagram, link:'https://www.instagram.com'},
-        {icon:FaYoutube, link:'https://www.youtube.com'}
-    ];
     const pages = ['Home', 'About', 'FAQ', 'Blog'];
 
     const HBox = styled(Box)(({theme})=>({display:'flex', gap:'20px', alignItems:'center'}))
@@ -58,7 +53,7 @@ const NavBar = () => {
         <img src={Logo} alt="" width={200}/>
         
         <HBox>
-            {icons.map((item)=>(
+            {SocialMedia.map((item)=>(
                 <a href={item.link}>
                     <item.icon size={20} color='#11142D'/>
                 </a>

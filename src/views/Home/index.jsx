@@ -1,10 +1,11 @@
 import { Box, Button, Checkbox, InputBase, Typography } from "@mui/material"
 import React, { useEffect, useState } from "react"
-import { Filters, HomeHeader, NavBar, Products } from "../../components";
+import { Filters, Footer, HomeHeader, NavBar, Products, Recommendations } from "../../components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProductList, requestProductList } from "../../redux/product";
-import { getFilters, requestGetCategories } from "../../redux/Home";
+import { getCategories, getFilters, requestGetCategories } from "../../redux/Home";
+import { isEmpty } from "lodash";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,11 @@ const Home = () => {
   },[])
 
   const productList = useSelector(getProductList);
+  const categories = useSelector(getCategories)
   
   // const [filter, setFilte] = useState({})
   
-  if(productList.length === 0) {
+  if(productList.length === 0 && isEmpty(categories)) {
     return <h1>LOADING...</h1>
   }
 
@@ -34,6 +36,8 @@ const Home = () => {
         </Box>
          <Products data={productList} />
         </div>
+        <Recommendations/>
+        <Footer/>
     </div>
   )
 }

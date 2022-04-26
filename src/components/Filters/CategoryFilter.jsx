@@ -19,7 +19,7 @@ return (
     <Box className="container">
     <TextH5 sx={{marginBottom:'5px'}}>Categories</TextH5>
     <List sx={{width:"100%", padding:'0px'}}>
-        {data.map((item)=>(
+        {data?.map((item)=>(
             <ListItem sx={{
                 justifyContent:'space-between', 
                 padding:'3px 0px',

@@ -1,0 +1,19 @@
+.footer-container{
+    margin-top: 50px;
+    background-color: #F86338;
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0px 75px;
+
+}
+
+.footer-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

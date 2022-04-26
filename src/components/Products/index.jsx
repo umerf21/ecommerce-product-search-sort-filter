@@ -151,7 +151,7 @@ const Products = ({data}) => {
     {Search()}
     {Sort()}
     <div className="productContainer">
-        {currentProducts.map((p)=>(
+        {currentProducts?.map((p)=>(
             <ProductItem item={p}/>
         ))}
     </div>
