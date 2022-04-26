@@ -26,7 +26,7 @@ const Footer = () => {
                 <List>
                     {SocialMedia.map((item)=>(
                         <ListItem disablePadding >
-                            <ListItemButton sx={{padding:'8px 0px'}} component="a" href={item.link}>
+                            <ListItemButton sx={{padding:{md:'8px 0px', sm:'3px 0px'}}} component="a" href={item.link}>
                             <ListItemText primary={item.text} />
                             </ListItemButton>
                         </ListItem>

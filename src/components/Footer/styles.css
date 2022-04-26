@@ -17,3 +17,12 @@
     justify-content: center;
     width: 100%;
 }
+
+@media screen and (max-width: 500px) {
+    .footer-container{
+        padding: 0px 25px;
+    }
+    .footer-wrapper{
+        flex-direction: column;
+    }
+}

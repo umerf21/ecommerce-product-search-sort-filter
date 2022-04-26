@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductList, requestProductList } from "../../redux/product";
 import { getCategories, getFilters, requestGetCategories } from "../../redux/Home";
 import { isEmpty } from "lodash";
+import './styles.css'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ const Home = () => {
     <div className="App">
         <NavBar/>
         <HomeHeader/>
-        <div style={{display:'flex', justifyContent:'space-between', margin:'50px 75px', gap:'50px'}}> 
+        <div className="product-section"> 
         <Box flex={1}>
           <Filters/>
         </Box>

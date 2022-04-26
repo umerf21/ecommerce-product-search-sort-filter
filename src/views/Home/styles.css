@@ -1,0 +1,13 @@
+.product-section{
+    display:flex;
+    justify-content:space-between;
+    margin:50px 75px;
+    gap:50px;
+    flex-direction: row;
+}
+
+@media screen and (max-width:500px) {
+    .product-section{
+        flex-direction: column;
+    }
+}
