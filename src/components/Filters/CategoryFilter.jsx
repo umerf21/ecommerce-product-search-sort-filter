@@ -2,11 +2,18 @@ import { Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import React, { useState } from "react";
 import { TextH5 } from "../../common/Text";
 import {IoIosArrowForward} from 'react-icons/io'
+import { useDispatch } from "react-redux";
+import { updateFilter } from "../../redux/Home";
 
 const CategoryFilter = ({data}) => {
 
     const [select, setSelect] = useState('');
+    const dispatch = useDispatch()
+    // dispatch(updateFilter({category : select}))
 
+    function handleSelect(e){
+        dispatch(updateFilter({category : e.target.textContent}))
+    }
 
 return (
     <Box className="container">
@@ -20,7 +27,7 @@ return (
             }}
             primaryText={item}
                 title={item}
-                onClick={(e) => console.log(e)}
+                onClick={handleSelect}
                 >
                 <ListItemText >{item}</ListItemText>
                 <ListItemIcon sx={{justifyContent:'flex-end', }}><IoIosArrowForward/></ListItemIcon>

@@ -4,7 +4,7 @@ import { Filters, HomeHeader, NavBar, Products } from "../../components";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProductList, requestProductList } from "../../redux/product";
-import { requestGetCategories } from "../../redux/Home";
+import { getFilters, requestGetCategories } from "../../redux/Home";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,8 @@ const Home = () => {
   },[])
 
   const productList = useSelector(getProductList);
-
-  const [filter, setFilte] = useState({})
+  
+  // const [filter, setFilte] = useState({})
   
   if(productList.length === 0) {
     return <h1>LOADING...</h1>
@@ -32,7 +32,7 @@ const Home = () => {
         <Box flex={1}>
           <Filters/>
         </Box>
-         <Products data={productList}/>
+         <Products data={productList} />
         </div>
     </div>
   )

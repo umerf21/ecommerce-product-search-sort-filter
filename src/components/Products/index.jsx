@@ -6,6 +6,9 @@ import {FiSearch} from 'react-icons/fi'
 import {FaList, } from 'react-icons/fa';
 import {FiGrid} from 'react-icons/fi'
 import {IoIosArrowDown} from 'react-icons/io'
+import _, { isEmpty } from "lodash";
+import { useSelector } from "react-redux";
+import { getFilters } from "../../redux/Home";
 
 const Products = ({data}) => {
 
@@ -39,7 +42,7 @@ const Products = ({data}) => {
       }
       else {
         setPage(1)
-       let tempData = [...data]
+       let tempData = [...allProducts]
        const current = tempData.filter(item=>
         item.title.toLowerCase().includes(search.toLowerCase()))
 
@@ -62,6 +65,7 @@ const Products = ({data}) => {
    )
 
 
+   //Sort
    const [anchorEl, setAnchorEl] = React.useState(null);
    const [sortby, setSortby] = useState('Newest')
   const open = Boolean(anchorEl);
@@ -125,6 +129,22 @@ const Products = ({data}) => {
         </div>
       </div>
    )
+
+   const filter = useSelector(getFilters)
+
+  //Filter
+  const [filters, setFilters] = useState(filter)
+  useEffect(()=>{
+    console.log(filter);
+    if(!isEmpty(filter)){
+      let temp = [];
+  
+      // categories Filter
+      temp = data.filter((item)=> item.category === filter.category)
+      setCurrentProducts(temp)
+      setAllProducts(temp)
+    }
+  },[filter])
 
   return (
     <Box flex={3}  >
