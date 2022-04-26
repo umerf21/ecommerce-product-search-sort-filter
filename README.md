@@ -7,8 +7,10 @@
 * Pagination on products
 * Search Product
 * Sort Product
+* Filters (Category)
+* Design
+
+* Recommendation According to Rating
 
 ### Still Working on
-* Filters
-* Design
 * Responsive (Rest)
