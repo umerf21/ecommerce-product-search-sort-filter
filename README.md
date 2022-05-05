@@ -12,5 +12,3 @@
 
 * Recommendation According to Rating
 
-### Still Working on
-* Responsive (Rest)
